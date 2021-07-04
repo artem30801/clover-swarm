@@ -1,6 +1,5 @@
 import setuptools
 
-
 extras = {
     "lint": ["black", "flake8", "isort"],
 }
