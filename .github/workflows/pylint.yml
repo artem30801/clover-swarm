@@ -29,7 +29,7 @@ jobs:
     - name: Run black
       run: black --check --verbose .
     - name: Run flake8
-      run: flake8 --statistics  # --exclude docs
+      run: flake8 --statistics --max-line-length=100 # --exclude docs
     - name: Run isort
       run: isort -cv .
     strategy:
