@@ -1,0 +1,17 @@
+name: Build clover debian package
+
+on: [pull_request, push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: |
+        sudo apt-get install python3-bloom fakeroot debhelper dpkg-dev
+    - name: Build package
+      run: |
+        roscd clover_app
+        bloom-generate rosdebian
+        fakeroot debian/rules binary
