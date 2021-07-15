@@ -10,6 +10,8 @@ jobs:
     - uses: ros-tooling/setup-ros@v0.2
       with:
         required-ros-distributions: noetic
+    - run: |
+        source /opt/ros/noetic/setup.bash
     - name: Install dependencies
       run: |
         sudo apt-get install python3-bloom fakeroot debhelper dpkg-dev
