@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: ros-tooling/setup-ros@v0.2
+      with:
+        required-ros-distributions: noetic
     - name: Install dependencies
       run: |
         sudo apt-get install python3-bloom fakeroot debhelper dpkg-dev
